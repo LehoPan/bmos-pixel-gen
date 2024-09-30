@@ -1,0 +1,11 @@
+@import "properties.scss";
+
+.pixel {
+    width: 0.75rem;
+    height: 1.5rem;
+  
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
