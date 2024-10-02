@@ -5,8 +5,8 @@ import DrawingPanel from "./DrawingPanel";
 import Row from "./Row";
 
 export default function Editor() {
-    const [panelWidth, setPanelWidth] = useState(80);
-    const [panelHeight, setPanelHeight] = useState(20);
+    const [panelWidth, setPanelWidth] = useState(100);
+    const [panelHeight, setPanelHeight] = useState(30);
     const [hideOptions, setHideOptions] = useState(false);
     const [hideDrawingPanel, setHideDrawingPanel] = useState(true);
     const [buttonText, setButtonText] = useState("start drawing");

@@ -15,7 +15,7 @@ export default function DrawingPanel(props) {
     let rows = [];
 
     for(let i = 0; i < height; i++) {
-        rows.push(<Row key={i} changeIndex={changeIndex} rowNum={i} width={width} selectedColor={selectedColor} />)
+        rows.push(<Row key={i} changeIndex={changeIndex} rowNum={i} width={width} height={height} selectedColor={selectedColor} />)
     }
 
     function changeIndex(row, column, color) {
@@ -23,9 +23,6 @@ export default function DrawingPanel(props) {
     }
 
     function exportText() {
-        // console.log(backingArray);
-        
-        // console.log('array2d:>> ', backingArray[0][0]);
 
         let frameString = "";
         for(let i = 0; i < height; i++) {
