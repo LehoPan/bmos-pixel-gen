@@ -34,9 +34,7 @@ export default function Pixel(props) {
     }
 
     function changeColorOnHover() {
-        console.log("clicker", click)
-        if (click === true){
-        
+        if (click === true){ 
             setPixelColor(selectedColor);
         }else{
 
@@ -54,6 +52,5 @@ export default function Pixel(props) {
     return (<div className="pixel" 
     onClick={applyColor}  
     onMouseEnter={changeColorOnHover} 
-    //onMouseLeave={resetColor} 
     style={{backgroundColor: pixelColor}}>{number}</div>);
 }
