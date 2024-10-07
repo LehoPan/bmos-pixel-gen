@@ -3,7 +3,7 @@ import "../styles/pixel.scss";
 
 
 export default function Pixel(props) {
-    const {changeIndex, row, column, width, height, selectedColor} = props;
+    const {changeIndex, row, column, width, height, selectedColor, toggleClick, click} = props;
 
     const [pixelColor, setPixelColor] = useState("#03a9f4");
     const [oldColor, setOldColor] = useState(pixelColor);
@@ -27,14 +27,19 @@ export default function Pixel(props) {
     }
 
     function applyColor() { 
+        toggleClick(!click)
         changeIndex(row, column, selectedColor);
         setPixelColor(selectedColor);
         setCanChangeColor(false);
     }
 
     function changeColorOnHover() {
-        setOldColor(pixelColor);
-        setPixelColor(selectedColor);
+        if (click === true){ 
+            setPixelColor(selectedColor);
+        }else{
+
+            setOldColor(pixelColor);
+        }
     }
 
     function resetColor() {
@@ -47,6 +52,5 @@ export default function Pixel(props) {
     return (<div className="pixel" 
     onClick={applyColor}  
     onMouseEnter={changeColorOnHover} 
-    onMouseLeave={resetColor} 
     style={{backgroundColor: pixelColor}}>{number}</div>);
 }

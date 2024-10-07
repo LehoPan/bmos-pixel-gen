@@ -10,8 +10,8 @@ export default function Editor() {
     const [hideOptions, setHideOptions] = useState(false);
     const [hideDrawingPanel, setHideDrawingPanel] = useState(true);
     const [buttonText, setButtonText] = useState("start drawing");
-    const [selectedColor, setColor] = useState("#000000")
-
+    const [selectedColor, setColor] = useState("#000000");
+    const [click, toggleClick] = useState(false);
     function initializeDrawingPanel() {
         setHideOptions(!hideOptions);
         setHideDrawingPanel(!hideDrawingPanel);
@@ -23,6 +23,7 @@ export default function Editor() {
         setColor(color.hex);
     }
 
+    
     return <div id="editor">
         <h1>Pixel Editor</h1>
         {hideDrawingPanel && <h2>Enter Panel Dimensions</h2>}
@@ -77,11 +78,13 @@ export default function Editor() {
 
         <br/>
 
-        {hideOptions && 
+        {hideOptions &&  
             (<DrawingPanel 
                 width={panelWidth}
                 height={panelHeight}
                 selectedColor={selectedColor}
+                toggleClick={toggleClick}
+                click={click}
             />
         )}
     </div>;
